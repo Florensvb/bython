@@ -29,13 +29,11 @@ for key in directories.keys():
 
 for index, (directory, files) in enumerate(directories.items()):
   if len(files) > 0:
-    print(f'Directory at {directory}:')
     for file in files:
       for index2, (directory2, files2) in enumerate(directories.items()):
         if directory2 == directory:
           continue
         if (file not in files2):
-          print(f'File {file} not in {directory2}')
+          print(f'File {file} is in {directory} but not in {directory2}')
   else:
     print(f'Directory at {key} is empty')
-  print('-----------------------------\n')
